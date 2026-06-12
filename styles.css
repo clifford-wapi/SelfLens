@@ -771,25 +771,72 @@ button {
 
 @media (max-width: 760px) {
   .app-header {
-    padding: 0 16px;
+    min-height: 62px;
+    padding: 0 14px;
+  }
+
+  .brand {
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .brand-mark {
+    border-radius: 7px;
+    flex: 0 0 auto;
+    height: 34px;
+    width: 34px;
+  }
+
+  .brand p {
+    font-size: 0.94rem;
+  }
+
+  .brand span {
+    font-size: 0.78rem;
   }
 
   .app-grid {
     display: block;
-    padding: 12px;
+    padding: 10px;
   }
 
   .nav-panel,
   .flow-panel {
-    margin-bottom: 12px;
+    border-radius: 8px;
+    box-shadow: 0 10px 26px rgba(31, 43, 39, 0.06);
+    margin-bottom: 10px;
     position: static;
   }
 
+  .nav-panel {
+    padding: 12px;
+  }
+
+  .panel-label {
+    margin-bottom: 8px;
+  }
+
   .test-list {
+    gap: 8px;
     grid-auto-columns: minmax(210px, 1fr);
     grid-auto-flow: column;
     overflow-x: auto;
     padding-bottom: 4px;
+    scroll-snap-type: x proximity;
+  }
+
+  .test-card {
+    min-height: 72px;
+    padding: 11px;
+    scroll-snap-align: start;
+  }
+
+  .test-card strong {
+    font-size: 0.9rem;
+  }
+
+  .test-card span {
+    font-size: 0.76rem;
   }
 
   .flow-head,
@@ -797,52 +844,154 @@ button {
   .actions,
   .gauge-row {
     display: grid;
+    gap: 12px;
   }
 
   .flow-actions {
-    align-items: start;
-    display: grid;
-    width: max-content;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .flow-head,
   .setup-view,
   .question-view,
   .results-view {
-    padding: 20px;
+    padding: 16px;
   }
 
   .flow-head h1 {
-    font-size: 1.55rem;
+    font-size: 1.34rem;
+    line-height: 1.18;
+  }
+
+  .status-pill {
+    font-size: 0.76rem;
+    padding: 6px 9px;
   }
 
   .stepper {
-    padding: 0 20px;
+    padding: 0;
   }
 
   .stepper li {
-    font-size: 0.78rem;
+    border-right: 1px solid var(--line);
+    font-size: 0.74rem;
+    justify-content: center;
+    min-height: 46px;
+  }
+
+  .stepper li:last-child {
+    border-right: 0;
+  }
+
+  .stepper b {
+    height: 22px;
+    width: 22px;
+  }
+
+  .stage {
+    min-height: auto;
+  }
+
+  .setup-grid {
+    gap: 14px;
   }
 
   .setup-grid,
-  .scale,
   .binary,
   .share-body {
     grid-template-columns: 1fr;
   }
 
+  .summary-row {
+    min-height: 42px;
+  }
+
+  .summary-row span {
+    font-size: 0.8rem;
+  }
+
+  .summary-row strong {
+    font-size: 0.86rem;
+  }
+
+  .identity-form {
+    padding: 14px;
+  }
+
+  .progress-block {
+    padding: 14px 16px 0;
+  }
+
+  .progress-top {
+    font-size: 0.78rem;
+    margin-bottom: 10px;
+  }
+
+  .question-copy {
+    margin-bottom: 18px;
+  }
+
+  .question-copy h2 {
+    font-size: 1.28rem;
+    line-height: 1.27;
+  }
+
+  .question-index {
+    font-size: 0.78rem;
+    margin-bottom: 8px;
+  }
+
+  .scale-wrap {
+    gap: 8px;
+  }
+
+  .scale-labels {
+    font-size: 0.76rem;
+  }
+
+  .scale {
+    gap: 6px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
   .share-modal {
     align-items: end;
-    padding: 12px;
+    padding: 10px;
   }
 
   .share-sheet {
-    max-height: calc(100vh - 24px);
+    max-height: calc(100vh - 20px);
+    padding: 16px;
     width: 100%;
   }
 
+  .share-sheet-head {
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  .share-body .qr-frame {
+    justify-self: center;
+    max-width: 230px;
+  }
+
+  .link-row {
+    grid-template-columns: 1fr;
+  }
+
   .choice-button {
-    min-height: 60px;
+    min-height: 54px;
+    padding: 0;
+  }
+
+  .choice-button strong {
+    font-size: 1.15rem;
+  }
+
+  .binary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .gauge {
@@ -851,9 +1000,37 @@ button {
 
   .actions div {
     width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .actions button {
-    flex: 1;
+    width: 100%;
+  }
+
+  .actions > .quiet-button {
+    order: 2;
+  }
+}
+
+@media (max-width: 380px) {
+  .stepper li {
+    gap: 5px;
+  }
+
+  .stepper span {
+    font-size: 0.68rem;
+  }
+
+  .flow-head h1 {
+    font-size: 1.22rem;
+  }
+
+  .scale {
+    gap: 5px;
+  }
+
+  .choice-button {
+    min-height: 50px;
   }
 }

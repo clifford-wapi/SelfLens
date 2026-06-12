@@ -353,6 +353,7 @@ const nodes = {
   shareNote: document.querySelector("#share-note"),
   copyLink: document.querySelector("#copy-link"),
   shareModal: document.querySelector("#share-modal"),
+  shareSheet: document.querySelector("#share-sheet"),
   openShare: document.querySelector("#open-share"),
 };
 
@@ -464,8 +465,7 @@ function renderShare(test) {
 function openSharePanel() {
   nodes.shareModal.hidden = false;
   document.body.classList.add("modal-open");
-  nodes.shareLink.focus();
-  nodes.shareLink.select();
+  nodes.shareSheet.focus();
 }
 
 function closeSharePanel() {
